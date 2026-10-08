@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class metric{
+
+    public static void main(String[] args){
+        Scanner input= new Scanner(System.in);
+
+        System.out.print("Enter in a measurement in meters: ");
+        if (!input.hasNextDouble()){
+            System.out.println("Invalid input: Please enter a valid input");
+            return;
+        }
+        double measurementInMeters = input.nextDouble();
+        if (measurementInMeters <= 0) {
+            System.out.println("Invalid input: the measurement can not be a negative number or zero");
+            return;
+        }
+        double measurementToMiles = measurementInMeters / 1609.344;
+        double measurementToFeet = measurementInMeters * 3.28084;
+        double measurementToInches = measurementInMeters * 39.3701;
+
+        System.out.printf("The measurement converted to miles is: %5.2f%n", measurementToMiles);
+        System.out.println();
+        System.out.printf("The measurement converted to feet is: %5.2f%n", measurementToFeet);
+        System.out.println();
+        System.out.printf("The measurement converted to inches is: %5.2f%n", measurementToInches);
+        }
+    }
